@@ -5,7 +5,11 @@
   </head>
   <body>
     <div id='app'>
-      {{ message }}
+      <art-image
+        v-for='image in imageUrls'
+        v-bind:src='image.baseimageurl'
+        v-bind:key='image.fileid'>
+      </art-image>
     </div>
     <script src='scripts.js'></script>
   </body>
