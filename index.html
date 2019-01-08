@@ -5,11 +5,15 @@
   </head>
   <body>
     <div id='app'>
-      <art-image
-        v-for='image in imageUrls'
-        v-bind:src='image.baseimageurl'
-        v-bind:key='image.fileid'>
-      </art-image>
+      <main-title></main-title>
+      <div class='art-images-container'>
+        <art-image
+          v-for='image in imageUrls'
+          v-bind:src='image.baseimageurl'
+          v-bind:key='image.fileid'>
+        </art-image>
+      </div>
+      <button v-on:click='changePage'>Next Page</button>
     </div>
     <script src='scripts.js'></script>
   </body>
