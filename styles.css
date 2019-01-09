@@ -4,11 +4,20 @@ body {
   background-size: cover;
 }
 
+.header-box {
+  background-color: #fff;
+  border: solid 4px #000;
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  justify-content: center;
+  margin: 0;
+}
+
 .art-images-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 190px;
+  margin-top: 170px;
 }
 
 .image-frame {
@@ -38,9 +47,20 @@ body {
 }
 
 .page-btn {
-  font-size: 1rem;
+  border: solid 4px #000;
   font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
   height: 80px;
   margin: 20px 40px 20px 40px;
   width: 200px;
+}
+
+.page-btn:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.page-btn:focus {
+  outline: none;
 }
