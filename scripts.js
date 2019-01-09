@@ -1,5 +1,6 @@
 Vue.component('art-image', {
-  template: `<img src={image.baseimageurl} alt='Image from the Harvard Art Museum' class='art-image' />`
+  props: { image: Object },
+  template: `<div class='image-frame'><img :src='image.baseimageurl' alt='Image from the Harvard Art Museum' class='art-image' /></div>`
 })
 
 Vue.component('main-title', {
@@ -13,16 +14,22 @@ var app = new Vue({
       imageUrls: null
   },
   methods: {
-    changePage: function() {
+    increasePage: function() {
       if (this.page >= 1) {
         this.page = this.page += 1
+      } else {
+        return
+      }
+    },
+    reducePage: function() {
+      if (this.page > 1) {
+        this.page = this.page -= 1
       } else {
         return
       }
     }
   },
   mounted: function() {
-    import key from './utils/API/APIkey.js'
     let finalPics = []
     fetch(`https://api.harvardartmuseums.org/image?apikey=${key}&page=${this.page}&q=height:800`)
       .then(response => response.json())
@@ -34,7 +41,6 @@ var app = new Vue({
   },
   watch: {
     page: function (num) {
-      import key from './utils/API/APIkey.js'
       let finalPics = []
       fetch(`https://api.harvardartmuseums.org/image?apikey=${key}&page=${num}&q=height:800`)
         .then(response => response.json())

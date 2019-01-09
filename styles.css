@@ -1,15 +1,46 @@
+body {
+  background-image: url('./utils/Assets/wallWallpaper.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
 .art-images-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 190px;
 }
 
-.image-container {
-  height: 300px;
-  width: 350px;
+.image-frame {
+  align-items: center;
+  background-image: url('./utils/Assets/frameblack.png');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 260px;
+  justify-content: center;
+  margin: 8px;
+  width: 310px;
 }
 
 .art-image {
-  height: 280px;
-  width: 330px;
+  border: solid 2px #000;
+  height: 228px;
+  width: 258px;
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 50px;
+  width: 60%;
+}
+
+.page-btn {
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  height: 80px;
+  margin: 20px 40px 20px 40px;
+  width: 200px;
 }
