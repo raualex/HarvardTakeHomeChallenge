@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='styles.css'>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id='app'>
+      <main-title></main-title>
+      <div class='art-images-container'>
+        <art-image
+          v-for='image in imageUrls'
+          v-bind:src='image.baseimageurl'
+          v-bind:key='image.fileid'>
+        </art-image>
+      </div>
+      <button v-on:click='changePage'>Next Page</button>
+    </div>
+    <script src='scripts.js'></script>
+  </body>
+</html>
